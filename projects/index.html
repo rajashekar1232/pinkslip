@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="ie=edge" http-equiv="x-ua-compatible">
+  <title>Imbuedesk Employees</title>
+  <meta content="Imbuedesk Employees Data" name="description">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <link href="logo.png" rel="shortcut icon">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+  <link href="css/normalize.css" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
+  <script src="https://www.google.com/jsapi" type="text/javascript"></script>
+  
+  <style>
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('https://www.w3schools.com/css/searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myTable {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+  font-size: 18px;
+}
+
+#myTable th, #myTable td {
+  text-align: left;
+  padding: 12px;
+}
+
+#myTable tr {
+  border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  background-color: #f1f1f1;
+}
+</style>
+</head>
+
+<body id="background">
+  <div id="box">
+    <h1>Employees Data - Official</h1>
+    <script src="js/google-sheets-html.js" type="text/javascript"></script>
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for emails.." title="Type in a name">
+    <div id="myTable">
+    <div id="table">
+    
+    </div>
+    </div>
+    <p class="small">Imbuedesk ENS Pvt. Ltd.</p>
+  </div>
+  
+  <script>
+function myFunction() {
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+</body>
+</html>
